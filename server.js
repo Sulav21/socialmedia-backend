@@ -12,6 +12,10 @@ app.use(morgan('dev'))
 app.use(helmet())
 app.use(express.json())
 
+// Database Connection
+import { dbConnection } from './src/config/db.js'
+dbConnection()
+
 // Routers
 app.get('/',(req,res)=>{
     res.json({
