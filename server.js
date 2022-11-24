@@ -29,6 +29,16 @@ app.get('/',(req,res)=>{
         message:"You have reached backend api !"
     })
 })
+// global error handling
+
+app.use((err,req,res,next)=>{
+    console.log(err)
+        res.status(err.status || 404)
+        res.json({
+            status:'error',
+            message:err.message
+        })
+    })
 
 // app bound with port to serve on internet
 app.listen(PORT,(error)=>{

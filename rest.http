@@ -1,3 +1,13 @@
 ###
 GET http://localhost:8000/auth
 
+###
+POST http://localhost:8000/auth/register
+Content-Type: application/json
+
+{
+    "username":"Sulav_ad",
+   "firstname":"Sulav",
+   "lastname":"adhikari",
+   "password":"123456"
+}
